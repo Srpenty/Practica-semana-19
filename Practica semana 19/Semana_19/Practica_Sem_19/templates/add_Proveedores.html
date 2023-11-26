@@ -1,0 +1,16 @@
+{%if admin %}
+<form action="" method="post">
+    {%csrf_token%}
+    <div>
+        <label>Nombre del proveedor</label>{{form.nombre}}
+    </div>
+    <p>-------------------------------------------------------</p>
+    <div>
+        <label>Telefono del proveedor</label>{{form.telefono}}
+    </div>
+    <p>-------------------------------------------------------</p>
+    <input type="submit" value="Agregar Proveedor">
+</form>
+{%else%}
+<h1>No tienes permiso para acceder a esta pagina</h1>
+{%endif%}

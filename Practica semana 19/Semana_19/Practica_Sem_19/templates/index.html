@@ -1,0 +1,8 @@
+{% if es_estudiante or es_admin %}
+<h1>Bienvenido {{user.username}}</h1>
+<a href="{% url 'listProveedores'%}"><button>Lista de Proveedores</button></a>
+<a href="{% url 'listProductos'%}"><button>Lista de Productos</button></a>
+{%else%}
+<h1>No tienes permisos para acceder a esta pagina</h1>
+{% endif %}
+<a href="{% url 'logout' %}"><Button>Cerrar sesion</Button></a>

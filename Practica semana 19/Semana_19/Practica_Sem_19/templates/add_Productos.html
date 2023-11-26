@@ -1,0 +1,31 @@
+{%if admin%}
+<form action="" method="post">
+    {%csrf_token%}
+    <div>
+        <label>Nombre de producto</label>
+        {{form.nombre}}
+    </div>
+
+    <p>-------------------------------------------------------</p>
+
+    <div>
+        <label>Existencia del producto</label>
+        {{form.stock}}
+    </div>
+
+    <p>-------------------------------------------------------</p>
+
+    <div>
+        <label>Proveedor del producto</label>
+        <select name="Proveedores">
+            {% for prov in Proveedores%}
+                <option value="{{prov.id}}">{{prov.id}} {{prov.nombre}} {{prov.telefono}}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <p>-------------------------------------------------------</p>
+    <input type="submit" value="Ingresar producto">
+</form>
+{%else%}
+<h1>No tienes permiso para acceder a esta pagina</h1>
+{%endif%}

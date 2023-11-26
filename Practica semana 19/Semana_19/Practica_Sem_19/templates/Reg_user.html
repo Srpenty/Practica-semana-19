@@ -1,0 +1,31 @@
+<form action="" method="post">
+    {% csrf_token %}
+
+    
+    <div class="form_group">
+        <label for="{{form.username.id_for_label}}">Nombre de usuario:</label>
+        {{form.username}}
+    </div>
+
+    <div>
+        <label for="{{form.email.id_for_label}}">Correo electronico:</label>
+        {{form.email}}
+    </div>
+
+    <div>
+        <label for="{{form.password1.id_for_label}}">Contraseña:</label>
+        {{form.password1}}
+    </div>
+
+    <div>
+        <label for="{{form.password2.id_for_label}}">Confirmar contraseña:</label>
+        {{form.password2}}
+    </div>
+
+    <div>
+        <label for="{{form.group.id_for_label}}">Rol:</label>
+        {{form.group}}
+    </div>
+
+    <input type="submit" value="Registrar">
+</form>

@@ -1,0 +1,21 @@
+{% if admin %}
+<table border="1mm">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Telefono</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for proveedor in proveedores %}
+        <tr>
+            <th>{{proveedor.nombre}}</th>
+            <th>{{proveedor.telefono}}</th>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a href="{% url 'addProveedores'%}"><button>Agregar nuevo Proveedor</button></a>
+{%else%}
+<h1>No tienes permiso para acceder a esta pagina</h1>
+{%endif%}

@@ -1,0 +1,23 @@
+{% if admin %}
+<table border="1mm">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Existencia</th>
+            <th>Proveedor</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            {% for producto in productos %}
+            <th>{{producto.nombre}}</th>
+            <th>{{producto.stock}}</th>
+            <th>{{producto.fk_prov}}</th>
+            {% endfor %}
+        </tr>
+    </tbody>
+</table>
+<a href="{% url 'addProductos' %}"><button>Agregar nuevo Producto</button></a>
+{% else %}
+<h1>No tienes permiso para acceder a la pagina</h1>
+{% endif %}
